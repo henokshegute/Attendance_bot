@@ -64,7 +64,7 @@ function userEndSession($chat_id)
 function adminEndSession($chat_id)
 {
     global $botAPI;
-    $keyboard = array(array("Leave", "Approve_Leave",));
+    $keyboard = array(array("Leave", "Approve",));
     $resp = array("keyboard" => $keyboard, "resize_keyboard" => true, "one_time_keyboard" => true);
     $reply = json_encode($resp);
     file_get_contents($botAPI . "/sendmessage?chat_id=" . $chat_id . "&text=The work hour is not started yet you can request leave &reply_markup=" . $reply);
